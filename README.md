@@ -1,6 +1,6 @@
 # NumPy Koans
 
-Learn NumPy through 132 interactive exercises in your browser. No installation needed.
+Learn NumPy through 126 interactive exercises in your browser. No installation needed. Inspired by [ClojureScript Koans](http://clojurescriptkoans.com).
 
 **https://crazytieguy.github.io/numpy-koans/**
 

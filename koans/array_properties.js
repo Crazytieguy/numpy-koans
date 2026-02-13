@@ -15,25 +15,25 @@ window.KOANS_ARRAY_PROPERTIES = [
         code: "a = np.array([[1, 2, 3], [4, 5, 6]])\nassert a.shape == __",
         solution: "(2, 3)",
         test: "",
-        hint: "Count the rows, then count the columns within each row."
+        hint: "Count the rows (2), then the columns (3)."
     },
     {
         id: "array_properties_3",
         title: "Number of Dimensions",
-        description: "A line has one truth. A plane, two. Ask how deep the array sees.",
+        description: "A line lives in one dimension. A grid, in two.",
         code: "a = np.array([[1, 2], [3, 4], [5, 6]])\nassert a.ndim == __",
         solution: "2",
         test: "",
-        hint: "How many levels of nesting are there? One pair of outer brackets, then inner brackets — that's two."
+        hint: "How many levels of nesting? Outer brackets, then inner brackets — that's 2."
     },
     {
         id: "array_properties_4",
         title: "Total Number of Elements",
-        description: "Count every grain of sand in the array.",
+        description: "Count every grain of sand, regardless of arrangement.",
         code: "a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nassert a.size == __",
         solution: "9",
         test: "",
-        hint: "Count every individual number in the array, regardless of how they are arranged."
+        hint: "Count every individual number: 3 rows x 3 columns = 9."
     },
     {
         id: "array_properties_5",
@@ -51,7 +51,7 @@ window.KOANS_ARRAY_PROPERTIES = [
         code: "a = np.array([1.0, 2.0, 3.0])\nassert a.dtype == np.dtype(__)",
         solution: "'float64'",
         test: "",
-        hint: "The decimal points make these floats. NumPy uses 64-bit floats by default."
+        hint: "Decimal points make these floats. NumPy uses 64-bit floats by default."
     },
     {
         id: "array_properties_7",
@@ -60,7 +60,7 @@ window.KOANS_ARRAY_PROPERTIES = [
         code: "a = np.array([1, 2, 3], dtype=np.int32)\nassert a.itemsize == __",
         solution: "4",
         test: "",
-        hint: "int32 means 32 bits. There are 8 bits in a byte."
+        hint: "int32 means 32 bits. There are 8 bits in a byte: 32 / 8 = 4."
     },
     {
         id: "array_properties_8",
@@ -69,24 +69,15 @@ window.KOANS_ARRAY_PROPERTIES = [
         code: "a = np.array([10, 20, 30, 40, 50], dtype=np.float64)\nassert a.nbytes == __",
         solution: "40",
         test: "",
-        hint: "5 elements, each float64 (8 bytes). Multiply to find the total."
+        hint: "5 elements x 8 bytes each (float64) = 40 bytes."
     },
     {
         id: "array_properties_9",
-        title: "Casting Changes Values",
-        description: "When you cast away the fractional self, only the whole remains.",
-        code: "a = np.array([1.7, 2.3, 3.9])\nb = a.astype(int)\nassert list(b) == __",
-        solution: "[1, 2, 3]",
-        test: "",
-        hint: "astype(int) truncates toward zero — it does not round. 1.7 becomes 1, not 2."
-    },
-    {
-        id: "array_properties_10",
         title: "Shape of a 3D Array",
         description: "Beyond the plane, a deeper world unfolds.",
         code: "a = np.array([[[1, 2], [3, 4], [5, 6]]])\nassert a.shape == __",
         solution: "(1, 3, 2)",
         test: "",
-        hint: "Count the brackets from outside in: 1 block, containing 3 rows, each with 2 elements."
+        hint: "Count brackets from outside in: 1 block, containing 3 rows, each with 2 elements."
     }
 ];
