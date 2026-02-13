@@ -10,17 +10,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Loading Overlay -->
-    <div id="loading-overlay">
-        <div class="loading-inner">
-            <div class="enso-spinner">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle class="enso-circle" cx="50" cy="50" r="38" fill="none" stroke-width="3"/>
-                </svg>
-            </div>
-            <h2 class="loading-title">NumPy Koans</h2>
-            <p class="loading-text">Preparing the dojo&hellip;</p>
-            <p class="loading-subtext">Loading Python &amp; NumPy environment</p>
+    <!-- Landing Page -->
+    <div id="landing-page">
+        <div class="landing-inner">
+            <h1 class="landing-title">NumPy Koans</h1>
+            <p class="landing-description">
+                Learn NumPy through a series of interactive exercises in your browser.
+                Fill in the blanks, and the path to mastery will reveal itself.
+            </p>
+            <p class="landing-description">
+                No installation needed &mdash; real Python and NumPy run right here,
+                powered by <a href="https://pyodide.org" target="_blank">Pyodide</a>.
+            </p>
+            <button id="begin-btn" class="begin-btn" disabled>
+                <span id="begin-text">Loading Python&hellip;</span>
+            </button>
+            <p class="landing-footer">
+                <a href="https://github.com/Crazytieguy/numpy-koans" target="_blank">Source on GitHub</a>
+            </p>
+        </div>
+        <div class="enso-bg landing-enso">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-dasharray="450 60" opacity="0.04"/>
+            </svg>
         </div>
     </div>
 

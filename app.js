@@ -9,7 +9,9 @@
     let completed = new Set();
 
     const $ = (s) => document.querySelector(s);
-    const overlay = $('#loading-overlay');
+    const landing = $('#landing-page');
+    const beginBtn = $('#begin-btn');
+    const beginText = $('#begin-text');
     const sidebar = $('#sidebar');
     const sidebarToggle = $('#sidebar-toggle');
     const sidebarTopics = $('#sidebar-topics');
@@ -26,9 +28,17 @@
         loadProgress();
         buildKoanList();
         buildSidebar();
-        navigateAndFocus(findFirstIncomplete());
+        navigateTo(findFirstIncomplete());
         bindEvents();
         loadPyodide();
+
+        beginBtn.addEventListener('click', () => {
+            landing.classList.add('hidden');
+            setTimeout(() => {
+                const firstInput = codeBox.querySelector('.koan-input');
+                if (firstInput) firstInput.focus();
+            }, 400);
+        });
     }
 
     function buildKoanList() {
@@ -54,15 +64,15 @@
     // ---- Pyodide ----
     async function loadPyodide() {
         try {
-            overlay.querySelector('.loading-text').textContent = 'Loading Python runtime\u2026';
+            beginText.textContent = 'Loading Python\u2026';
             pyodide = await globalThis.loadPyodide();
-            overlay.querySelector('.loading-text').textContent = 'Loading NumPy\u2026';
+            beginText.textContent = 'Loading NumPy\u2026';
             await pyodide.loadPackage('numpy');
             pyodide.runPython('import numpy as np');
-            overlay.classList.add('hidden');
+            beginBtn.disabled = false;
+            beginText.textContent = 'Begin \u203a';
         } catch (e) {
-            overlay.querySelector('.loading-text').textContent = 'Failed to load environment';
-            overlay.querySelector('.loading-subtext').textContent = e.message;
+            beginText.textContent = 'Failed to load \u2014 try refreshing';
         }
     }
 
