@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NumPy Koans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div id="loading-overlay">
+        <div class="loading-inner">
+            <div class="enso-spinner">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="enso-circle" cx="50" cy="50" r="38" fill="none" stroke-width="3"/>
+                </svg>
+            </div>
+            <h2 class="loading-title">NumPy Koans</h2>
+            <p class="loading-text">Preparing the dojo&hellip;</p>
+            <p class="loading-subtext">Loading Python &amp; NumPy environment</p>
+        </div>
+    </div>
+
+    <!-- Top Bar -->
+    <header id="topbar">
+        <div class="topbar-left">
+            <button id="sidebar-toggle" aria-label="Toggle sidebar">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M2 4h14M2 9h14M2 14h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <h1 class="site-title">NumPy<span class="title-accent">Koans</span></h1>
+        </div>
+        <div class="topbar-right">
+            <div class="progress-wrapper">
+                <span id="progress-text">0 / 0 completed</span>
+                <div class="progress-track">
+                    <div id="progress-bar" class="progress-fill" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="app-container">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-scroll">
+                <div id="sidebar-topics"></div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main id="main-content">
+            <div class="koan-container">
+                <div class="koan-category" id="koan-category"></div>
+                <div class="koan-description" id="koan-description"></div>
+                <div class="code-box" id="code-box"></div>
+                <div id="feedback" class="feedback hidden"></div>
+                <div class="koan-footer">
+                    <button id="hint-btn" class="hint-toggle">
+                        <svg class="hint-icon" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                            <circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.2"/>
+                            <path d="M5.5 5.5a1.5 1.5 0 1 1 2.12 1.37c-.41.24-.62.5-.62.88V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                            <circle cx="7" cy="10.5" r="0.5" fill="currentColor"/>
+                        </svg>
+                        hint
+                    </button>
+                    <div id="hint-content" class="hint-content hidden"></div>
+                </div>
+            </div>
+            <div class="enso-bg">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-dasharray="450 60" opacity="0.04"/>
+                </svg>
+            </div>
+        </main>
+    </div>
+
+    <script src="koans/array_creation.js"></script>
+    <script src="koans/array_properties.js"></script>
+    <script src="koans/indexing_slicing.js"></script>
+    <script src="koans/reshaping.js"></script>
+    <script src="koans/math_operations.js"></script>
+    <script src="koans/aggregations.js"></script>
+    <script src="koans/broadcasting.js"></script>
+    <script src="koans/boolean_fancy_indexing.js"></script>
+    <script src="koans/linear_algebra.js"></script>
+    <script src="koans/random_sampling.js"></script>
+    <script src="koans/advanced_techniques.js"></script>
+    <script src="koans/performance_patterns.js"></script>
+    <script src="koans/index.js"></script>
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.27.4/full/pyodide.js"></script>
+</body>
+</html>
